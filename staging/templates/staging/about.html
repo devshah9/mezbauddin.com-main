@@ -1,0 +1,412 @@
+{% extends 'staging/base.html' %} {% block title %} Home {% endblock %}
+<!-- loading from the static folder? -->
+{% load static %} {% load wagtailcore_tags %} {% block page-css %}
+<!-- CSS and other static file references go here -->
+<link rel="stylesheet" href="{% static 'staging/css/home.css' %}" />
+{% endblock %}
+
+<!-- adding title to base.html -->
+{% block content %}
+<section class="abi">
+  <div class="container-fluid bg-dark-blue">
+    <a href="{% url 'staging:explore' %}" class="white-btn"
+      ><i class="bi bi-plus"></i>Close</a
+    >
+    <div class="container container-about-main">
+      <div class="row">
+        <div class="col-lg-7 col-md-12 col-sm-12 clm-hero-about">
+          <h6 class="product">ABOUT ME</h6>
+          <h1>
+            Awarded IT <br />
+            Consultant 12+ Years <br />of experience
+          </h1>
+          <p class="pra-about">
+            I'm a Mezba, Based on South West London, UK, a passionate about
+            building excellent software that improves the lives of those around
+            me.
+          </p>
+          <div class="container-flex">
+            <div class="container-with-border-white">
+              <h2>40+</h2>
+              <p>Successful Project</p>
+            </div>
+            <div class="container-with-border-white-flex">
+              <p>Latest Work will be appear here as per design guidelines</p>
+              <img
+                src="{% static 'staging/about/img/rail.png' %}"
+                class="img-fluid"
+              />
+            </div>
+            <div class="container-clm-down-arrow">
+              <i class="bi bi-arrow-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-12 col-sm-12 mt-5">
+          <div id="imageContainer">
+            <img
+              src="{% static 'staging/about/img/abouthero.png' %}"
+              id="sliderImage"
+              class="heroabout"
+            />
+          </div>
+          <div class="d-flex linechange">
+            <span id="prevBtn" class="mx-3" onclick="changeImage(-1)"
+              >Previous</span
+            >
+            <img
+              src="{% static 'staging/about/img/abtline.png' %}"
+              alt=""
+              class="img-fluid"
+            />
+            <spam id="nextBtn" onclick="changeImage(1)" class="mx-3">Next</spam>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container container-logo-about">
+    <img
+      src="{% static 'staging/about/img/Union.png' %}"
+      alt=""
+      class="right-union"
+    />
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 clm-flex container-about-secound">
+        <h6 class="product bold">BRANDS</h6>
+        <h3 class="bold product">Long Time Project, with Our Best Partner</h3>
+        <img
+          src="{% static 'staging/about/img/line.png' %}"
+          alt=""
+          class="img-fluid my-4"
+        />
+        <p class="text-product-index-p">
+          I'm a Mezba, Based on South West London, UK, a passionate about
+          building excellent software that improves the lives of those around
+          me.
+        </p>
+        <button class="btn-success btn-view">VIEW MORE</button>
+      </div>
+      <div class="col-lg-6 col-sm-12 client-container">
+        <div class="row">
+          <img
+            src="{% static 'staging/about/img/Rectangle 87.png' %}"
+            alt=""
+            class="img-fluid logoclient"
+          />
+          <div class="side-line"></div>
+          <img
+            src="{% static 'staging/about/img/star (1).png' %}"
+            alt=""
+            class="img-fluid logoclient"
+          />
+          <img
+            src="{% static 'staging/about/img/bmw.png' %}"
+            alt=""
+            class="img-fluid logoclient"
+          />
+          <div class="side-line2"></div>
+        </div>
+        <div class="row">
+          <div class="buttom-line"></div>
+          <img
+            src="{% static 'staging/about/img/Rectangle 87.png' %}"
+            alt=""
+            class="img-fluid logoclient"
+          />
+          <img
+            src="{% static 'staging/about/img/star (1).png' %}"
+            alt=""
+            class="img-fluid logoclient"
+          />
+          <img
+            src="{% static 'staging/about/img/bmw.png' %}"
+            alt=""
+            class="img-fluid logoclient"
+          />
+          <div class="buttom-line2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <div class="container mt-4 pt-4">
+        <h2 class="dark-grey-text-h2 bold-700">PERSONAL INFO</h2>
+        <br />
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <table class="table">
+              <tr>
+                <div class="flex-text-table">
+                  <p>
+                    First Name:<span class="bold table-dark-text">Mezba</span>
+                  </p>
+                </div>
+              </tr>
+              <tr class="">
+                <div class="flex-text-table">
+                  <p>
+                    Last Name:<span class="bold table-dark-text">Uddin</span>
+                  </p>
+                </div>
+              </tr>
+              <tr>
+                <div class="flex-text-table">
+                  <p>Age:<span class="bold table-dark-text">34 Years</span></p>
+                </div>
+              </tr>
+              <tr>
+                <div class="flex-text-table">
+                  <p>
+                    Nationality:<span class="bold table-dark-text"
+                      >Bangladeshi</span
+                    >
+                  </p>
+                </div>
+              </tr>
+              <tr>
+                <div class="flex-text-table">
+                  <p>
+                    Freelance:<span class="bold table-dark-text"
+                      >Available</span
+                    >
+                  </p>
+                </div>
+              </tr>
+            </table>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <table class="table">
+              <tr>
+                <div class="flex-text-table">
+                  <p>Address:<span class="bold table-dark-text">uk</span></p>
+                </div>
+              </tr>
+              <tr class="">
+                <div class="flex-text-table">
+                  <p>
+                    Phone:<span class="bold table-dark-text">+21621184010</span>
+                  </p>
+                </div>
+              </tr>
+              <tr>
+                <div class="flex-text-table">
+                  <p>
+                    Skype:<span class="bold table-dark-text">mezba.uddin</span>
+                  </p>
+                </div>
+              </tr>
+              <tr>
+                <div class="flex-text-table">
+                  <p>
+                    Languages:<span class="bold table-dark-text"
+                      >French, English</span
+                    >
+                  </p>
+                </div>
+              </tr>
+              <tr>
+                <div class="flex-text-table">
+                  <p>
+                    Email:<span class="bold table-dark-text"
+                      >youremail@domain.com</span
+                    >
+                  </p>
+                </div>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12 d-flex">
+      <div class="row">
+        <div class="box-with-border-light-grey">
+          <h1 class="bold-900">12 <span class="plus-number"> +</span></h1>
+          <div class="container-flex-experince">
+            <div class="flex-text-experience">
+              <i class="bi bi-dash-lg"></i>
+              <h5>YEARS OF EXPERIENCE</h5>
+            </div>
+          </div>
+        </div>
+        <div class="box-with-border-light-grey">
+          <h1 class="bold-900">81 <span class="plus-number"> +</span></h1>
+          <div class="container-flex-experince">
+            <div class="flex-text-experience">
+              <i class="bi bi-dash-lg"></i>
+              <h5>HAPPY CUSTOMERS</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="box-with-border-light-grey">
+          <h1 class="bold-900">97 <span class="plus-number"> +</span></h1>
+          <div class="container-flex-experince">
+            <div class="flex-text-experience">
+              <i class="bi bi-dash-lg"></i>
+              <h5>COMPLETED PROJECTS</h5>
+            </div>
+          </div>
+        </div>
+        <div class="box-with-border-light-grey">
+          <h1 class="bold-900">53 <span class="plus-number"> +</span></h1>
+          <div class="container-flex-experince">
+            <div class="flex-text-experience">
+              <i class="bi bi-dash-lg"></i>
+              <h5>AWARDS WON</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+  <hr class="center-hr-grey" />
+  <div class="my-5 pt-4">
+    <h4 class="text-center dark-grey-text-h2 bold-700">
+      EXPERIENCE & EDUCATION
+    </h4>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="container flex-experience">
+          <img
+            src="{% static 'staging/about/img/job.svg' %}"
+            alt=""
+            class="img-fluid before-icon"
+          />
+          <div class="container education-card">
+            <h6 class="p-span"><span class="">2028 - Present</span></h6>
+            <h6 class="title-text">
+              <span class="bold-title">WEB DEVELOPER</span> - ENVATO
+            </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur tempor incididunt ut
+              labore adipisicing elit,
+            </p>
+          </div>
+        </div>
+        <div class="container flex-experience">
+          <img
+            src="{% static 'staging/about/img/job.svg' %}"
+            alt=""
+            class="img-fluid before-icon"
+          />
+          <div class="container education-card">
+            <h6 class="p-span"><span class="">2028 - Present</span></h6>
+            <h6 class="title-text">
+              <span class="bold-title">WEB DEVELOPER</span> - ENVATO
+            </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur tempor incididunt ut
+              labore adipisicing elit,
+            </p>
+          </div>
+        </div>
+        <div class="container flex-experience">
+          <img
+            src="{% static 'staging/about/img/job.svg' %}"
+            alt=""
+            class="img-fluid before-icon"
+          />
+          <div class="container education-card">
+            <h6 class="p-span"><span class="">2028 - Present</span></h6>
+            <h6 class="title-text">
+              <span class="bold-title">WEB DEVELOPER</span> - ENVATO
+            </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur tempor incididunt ut
+              labore adipisicing elit,
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="container flex-experience">
+          <img
+            src="{% static 'staging/about/img/Education.svg' %}"
+            alt=""
+            class="img-fluid before-icon"
+          />
+          <div class="container education-card">
+            <h6><span class="spandark">2015</span></h6>
+            <h6 class="title-text">
+              <span class="bold-title">ENGINEERING DEGREE</span> - OXFORD
+              UNIVERSITY
+            </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur tempor incididunt ut
+              labore adipisicing elit,
+            </p>
+          </div>
+        </div>
+        <div class="container flex-experience">
+          <img
+            src="{% static 'staging/about/img/Education.svg' %}"
+            alt=""
+            class="img-fluid before-icon"
+          />
+          <div class="container education-card">
+            <h6><span class="spandark">2012</span></h6>
+            <h6 class="title-text">
+              <span class="bold-title">MASTER DEGREE </span> - OXFORD UNIVERSITY
+            </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur tempor incididunt ut
+              labore adipisicing elit,
+            </p>
+          </div>
+        </div>
+        <div class="container flex-experience">
+          <img
+            src="{% static 'staging/about/img/Education.svg' %}"
+            alt=""
+            class="img-fluid before-icon"
+          />
+          <div class="container education-card">
+            <h6><span class="spandark">2009</span></h6>
+            <h6 class="title-text">
+              <span class="bold-title">BACHELOR DEGREE</span> - OXFORD
+              UNIVERSITY
+            </h6>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur tempor incididunt ut
+              labore adipisicing elit,
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block page-js %}
+<script>
+  var currentImageIndex = 0;
+  // change img fron here sir-------------------
+  var images = [
+    "/static/staging/about/img/abouthero.png",
+    "/static/staging/about/img/abouthero.png",
+    "/static/staging/about/img/abouthero.png",
+  ]; // Add paths to your images here
+  // change img fron here sir-------------------
+
+  function changeImage(direction) {
+    currentImageIndex += direction;
+    if (currentImageIndex < 0) {
+      currentImageIndex = images.length - 1;
+    } else if (currentImageIndex >= images.length) {
+      currentImageIndex = 0;
+    }
+    var image = document.getElementById("sliderImage");
+    image.src = images[currentImageIndex];
+  }
+</script>
+{% endblock %}

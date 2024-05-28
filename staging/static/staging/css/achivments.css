@@ -1,0 +1,269 @@
+.achievement {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.achievement .overlap-wrapper {
+  background-color: #ffffff;
+  width: 1728px;
+  height: 1117px;
+}
+
+.achievement .overlap {
+  position: relative;
+  height: 1016px;
+}
+
+.achievement .portfolio {
+  position: absolute;
+  width: 1728px;
+  height: 962px;
+  top: 0;
+  left: 0;
+}
+
+.achievement .div {
+  position: absolute;
+  width: 371px;
+  height: 104px;
+  top: 100px;
+  left: 681px;
+}
+
+/* .achievement .text-wrapper {
+  position: absolute;
+  height: 24px;
+  top: 0;
+  left: 123px;
+  font-family: "Product Sans Medium-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--pure-white);
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+} */
+
+.achievement .overlap-group {
+  position: absolute;
+  width: 367px;
+  height: 74px;
+  top: 30px;
+  left: 0;
+}
+
+.achievement .text-wrapper-2 {
+  position: absolute;
+  height: 73px;
+  top: 0;
+  left: 0;
+  font-family: "Product Sans Medium-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--pure-white);
+  font-size: 60px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.achievement .vector {
+  position: absolute;
+  width: 98px;
+  height: 1px;
+  top: 0;
+  left: 134px;
+  object-fit: cover;
+}
+
+.achievement .group {
+  position: absolute;
+  width: 1504px;
+  height: 692px;
+  top: 324px;
+  left: 112px;
+}
+
+.achievement .rectangle-wrapper {
+  position: absolute;
+  width: 480px;
+  height: 330px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+.achievement .rectangle {
+  height: 302px;
+  top: 14px;
+  left: 14px;
+  position: absolute;
+  width: 452px;
+}
+
+.achievement .img-wrapper {
+  position: absolute;
+  width: 480px;
+  height: 330px;
+  top: 362px;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+.achievement .group-2 {
+  position: absolute;
+  width: 480px;
+  height: 330px;
+  top: 0;
+  left: 1024px;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+.achievement .group-3 {
+  position: absolute;
+  width: 480px;
+  height: 330px;
+  top: 362px;
+  left: 1024px;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+.achievement .group-4 {
+  position: absolute;
+  width: 480px;
+  height: 330px;
+  top: 0;
+  left: 512px;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+.achievement .overlap-group-wrapper {
+  position: absolute;
+  width: 480px;
+  height: 330px;
+  top: 362px;
+  left: 512px;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+.achievement .group-wrapper {
+  position: relative;
+  width: 452px;
+  height: 302px;
+  top: 14px;
+  left: 14px;
+  background-image: url('../images/achievements/rectangle-51.png');
+  background-size: 100% 100%;
+}
+
+.achievement .div-wrapper {
+  position: relative;
+  height: 120px;
+  top: 182px;
+}
+
+.achievement .overlap-group-2 {
+  position: relative;
+  width: 452px;
+  height: 120px;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.achievement .rectangle-2 {
+  height: 120px;
+  top: 0;
+  left: 0;
+  background-color: var(--text-color);
+  border-radius: 0px 0px 8px 8px;
+  opacity: 0.8;
+  position: absolute;
+  width: 452px;
+}
+
+.achievement .group-5 {
+  position: absolute;
+  width: 365px;
+  height: 60px;
+  top: 30px;
+  left: 23px;
+}
+
+.achievement .text-wrapper-3 {
+  position: absolute;
+  height: 24px;
+  top: 0;
+  left: 0;
+  font-family: "Product Sans Medium-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--pure-white);
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.achievement .text-wrapper-4 {
+  position: absolute;
+  height: 36px;
+  top: 24px;
+  left: 0;
+  font-family: "Product Sans Medium-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--pure-white);
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* .achievement .btn {
+  position: absolute;
+  width: 152px;
+  height: 76px;
+  top: 58px;
+  left: 67px;
+  all: unset;
+  box-sizing: border-box;
+} */
+
+/* .achievement .close {
+  position: relative;
+  width: 146px;
+  height: 52px;
+  top: 12px;
+  left: 3px;
+} */
+
+/* .achievement .frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 32px;
+  position: relative;
+  background-color: var(--pure-white);
+  border-radius: 4px;
+} */
+
+/* .achievement .close-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Product Sans Medium-Regular", Helvetica;
+  font-weight: 400;
+  color: var(--primarycolor);
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+} */

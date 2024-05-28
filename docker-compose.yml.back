@@ -1,0 +1,31 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    command: bash -c "python manage.py makemigrations home --noinput && 
+                      python manage.py makemigrations staging --noinput && 
+                      python manage.py makemigrations blog --noinput &&
+                      python manage.py migrate --noinput && 
+                      gunicorn MezProject.wsgi:application --bind 0.0.0.0:8000"
+    networks:
+      - mynetwork
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=your_database_name
+      - POSTGRES_USER=your_username
+      - POSTGRES_PASSWORD=your_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+volumes:
+  postgres_data:

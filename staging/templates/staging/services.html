@@ -1,0 +1,349 @@
+{% extends 'staging/base.html' %} {% block title %} Home {% endblock %}
+<!-- loading from the static folder? -->
+{% load static %} {% load wagtailcore_tags %} {% block page-css %}
+<!-- CSS and other static file references go here -->
+<link rel="stylesheet" href="{% static 'staging/css/home.css' %}" />
+{% endblock %}
+
+<!-- adding title to base.html -->
+{% block content %}
+<div class="container-fluid bg-darkgreen">
+  <a href="{% url 'staging:explore' %}" class="white-btn"
+    ><i class="bi bi-plus"></i>Close</a
+  >
+  <div class="container flex-servies">
+    <div class="row">
+      <div class="clmtextflex">
+        <h1>So great! thorough !</h1>
+        <div class="flex-dot">
+          <img
+            src="{% static 'staging/services/img/dot.svg' %}"
+            onclick="currentSlide2(1)"
+            class="mx-1"
+          />
+          <img
+            src="{% static 'staging/services/img/dot.svg' %}"
+            onclick="currentSlide2(2)"
+            class="mx-1"
+          />
+          <img
+            src="{% static 'staging/services/img/green-dot.svg' %}"
+            onclick="currentSlide2(3)"
+            class="mx-1"
+          />
+          <img
+            src="{% static 'staging/services/img/dot.svg' %}"
+            onclick="currentSlide2(4)"
+            class="mx-1"
+          />
+          <div style="text-align: center; display: none">
+            <span class="dot" onclick="currentSlide2(1)"></span>
+            <span class="dot" onclick="currentSlide2(2)"></span>
+            <span class="dot" onclick="currentSlide2(3)"></span>
+            <span class="dot" onclick="currentSlide2(4)"></span>
+          </div>
+        </div>
+        <button class="btn btn-white">Details</button>
+      </div>
+    </div>
+    <div class="flex-services-main">
+      <p class="text-success px-4 flex-services-pra">
+        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+        sint. Velit officia consequat duis enim velit mollit. Exercitation.
+      </p>
+      <div class="container d-flex">
+        <div class="clm-icon">
+          <img
+            src="{% static 'staging/services/img/atom.png' %}"
+            alt=""
+            class="grenhide"
+          />
+          <img
+            src="{% static 'staging/services/img/whiteatom.png' %}"
+            alt=""
+            class="hide"
+          />
+          <h5 class="atomtext">App</h5>
+          <div class="flexclmactive">
+            <p class="pratext">
+              User Experience, Artifici al Intelligence, Website Development,
+              Product Development, Innovation
+            </p>
+            <i class="bi bi-arrow-right text-right"></i>
+          </div>
+        </div>
+        <div class="clm-icon">
+          <img
+            src="{% static 'staging/services/img/atom.png' %}"
+            alt=""
+            class="grenhide"
+          />
+          <img
+            src="{% static 'staging/services/img/whiteatom.png' %}"
+            alt=""
+            class="hide"
+          />
+          <h5 class="atomtext">web</h5>
+          <div class="flexclmactive">
+            <p class="pratext">
+              User Experience, Artifici al Intelligence, Website Development,
+              Product Development, Innovation
+            </p>
+            <i class="bi bi-arrow-right text-right"></i>
+          </div>
+        </div>
+        <div class="clm-icon clm-icon">
+          <img
+            src="{% static 'staging/services/img/atom.png' %}"
+            alt=""
+            class="grenhide"
+          />
+          <img
+            src="{% static 'staging/services/img/whiteatom.png' %}"
+            alt=""
+            class="hide"
+          />
+          <h5 class="atomtext">Consultancy</h5>
+          <div class="flexclmactive">
+            <p class="pratext">
+              User Experience, Artifici al Intelligence, Website Development,
+              Product Development, Innovation
+            </p>
+            <i class="bi bi-arrow-right text-right"></i>
+          </div>
+        </div>
+        <div class="clm-icon">
+          <img
+            src="{% static 'staging/services/img/atom.png' %}"
+            alt=""
+            class="grenhide"
+          />
+          <img
+            src="{% static 'staging/services/img/whiteatom.png' %}"
+            alt=""
+            class="hide"
+          />
+          <h5 class="atomtext">Network Security</h5>
+          <div class="flexclmactive">
+            <p class="pratext">
+              User Experience, Artifici al Intelligence, Website Development,
+              Product Development, Innovation
+            </p>
+            <i class="bi bi-arrow-right text-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container container-logo-about">
+    <div class="row">
+      <div class="col-lg-6 service-container-images">
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <div class="carousel-item active">
+              <img
+                src="{% static 'staging/services/img/card.png' %}"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="{% static 'staging/services/img/card.png' %}"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="{% static 'staging/services/img/card.png' %}"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="{% static 'staging/services/img/card.png' %}"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 clm-services">
+        <h6 class="text-success">Work</h6>
+        <h1 class="bold h1-service">So great! Very thorough !</h1>
+        <p class="service-pra" style="font-style: italic">
+          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+          sint. Velit officia consequat duis enim velit mollit. Exercitation.
+        </p>
+        <div class="container">
+          <button class="btn-white">Details</button>
+        </div>
+      </div>
+    </div>
+    <div class="text-center my-4 pt-5">
+      <img
+        src="{% static 'staging/services/img/dot.svg' %}"
+        onclick="currentSlide(1)"
+        class="mx-2"
+      />
+      <img
+        src="{% static 'staging/services/img/dot.svg' %}"
+        onclick="currentSlide(2)"
+        class="mx-2"
+      />
+      <img
+        src="{% static 'staging/services/img/green-dot.svg' %}"
+        onclick="currentSlide(3)"
+        class="mx-2"
+      />
+      <img
+        src="{% static 'staging/services/img/dot.svg' %}"
+        onclick="currentSlide(4)"
+        class="mx-2"
+      />
+      <div style="text-align: center; display: none">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+    </div>
+  </div>
+  <div class="container background-color-white">
+    <div class="row flex-card-craetive">
+      <div class="clm-card-services">
+        <img
+          src="{% static 'staging/services/img/creative.png' %}"
+          class="icon-card-creative"
+        />
+        <h6 class="creative-card">Creative Design</h6>
+        <p class="creative-pra">
+          Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
+          adipisicing elit
+        </p>
+      </div>
+      <div class="clm-card-services">
+        <img
+          src="{% static 'staging/services/img/creative.png' %}"
+          class="icon-card-creative"
+        />
+        <h6 class="creative-card">Creative Design</h6>
+        <p class="creative-pra">
+          Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
+          adipisicing elit
+        </p>
+      </div>
+      <div class="clm-card-services">
+        <img
+          src="{% static 'staging/services/img/creative.png' %}"
+          class="icon-card-creative"
+        />
+        <h6 class="creative-card">Creative Design</h6>
+        <p class="creative-pra">
+          Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
+          adipisicing elit
+        </p>
+      </div>
+    </div>
+    <div class="row flex-card-craetive">
+      <div class="clm-card-services">
+        <img
+          src="{% static 'staging/services/img/creative.png' %}"
+          class="icon-card-creative"
+        />
+        <h6 class="creative-card">Creative Design</h6>
+        <p class="creative-pra">
+          Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
+          adipisicing elit
+        </p>
+      </div>
+      <div class="clm-card-services">
+        <img
+          src="{% static 'staging/services/img/creative.png' %}"
+          class="icon-card-creative"
+        />
+        <h6 class="creative-card">Creative Design</h6>
+        <p class="creative-pra">
+          Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
+          adipisicing elit
+        </p>
+      </div>
+      <div class="clm-card-services">
+        <img
+          src="{% static 'staging/services/img/creative.png' %}"
+          class="icon-card-creative"
+        />
+        <h6 class="creative-card">Creative Design</h6>
+        <p class="creative-pra">
+          Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
+          adipisicing elit
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block page-js %}
+<script>
+  var slideIndex = 1;
+
+  function showSlides2(n) {
+    var slides = document.querySelectorAll(".clm-icon");
+    var dots = document.querySelectorAll(".dot");
+
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("clm-iconactive");
+      dots[i].classList.remove("clm-iconactive");
+    }
+
+    slides[slideIndex - 1].classList.add("clm-iconactive");
+    dots[slideIndex - 1].classList.add("clm-iconactive");
+  }
+
+  function currentSlide2(n) {
+    showSlides2((slideIndex = n));
+  }
+
+  showSlides2(slideIndex);
+</script>
+<script>
+  var slideIndex = 0;
+
+  function showSlides() {
+    var slides = document.querySelectorAll(".carousel-item");
+    var dots = document.querySelectorAll(".dot");
+
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      dots[i].classList.remove("active");
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("active");
+
+    setTimeout(showSlides, 9000); // Change slide every 2 seconds
+  }
+
+  function currentSlide(n) {
+    slideIndex = n;
+    showSlides();
+  }
+
+  showSlides();
+</script>
+{% endblock %}

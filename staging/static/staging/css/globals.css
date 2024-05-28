@@ -1,0 +1,53 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+@font-face {
+  font-family: "SF Pro Display-Bold";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/634e6b4b723b28ff69092d1b/fonts/fontsfree-net-sfprodisplay-bold.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "SF Pro Display-Medium";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/64f7ed1586d1fc0125de8d9c/fonts/sf-pro-display-medium.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "SF Pro Display-Semibold";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/62600488abc580a946ffeaea/fonts/fontsfree-net-sfprodisplay-semibold.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Product Sans Medium-Regular";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/630a6ec84bf3ee9a2e944d20/fonts/productsans-medium.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "SF Pro Display-SemiboldItalic";
+  src: url("https://anima-uploads.s3.amazonaws.com/5c4701823a0ee0000a5f8acd/SF-Pro-Display-SemiboldItalic.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Product Sans-Bold";
+  src: url("https://anima-uploads.s3.amazonaws.com/596db24aa0dc3c000d9a4ed2/product-sans-bold.ttf") format("truetype");
+}

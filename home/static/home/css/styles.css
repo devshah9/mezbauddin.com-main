@@ -1,0 +1,87 @@
+
+
+
+h1 a, h2 a, h3, h4, p {
+    font-family: Verdana;
+    /* color: #606c38; */
+    /* text-align: center  ; */
+}
+
+body {
+    background-color: #f5cb5c;
+    font-family: Verdana;
+    color: #000000;
+    /* text-align: center; */
+
+}
+.logo{
+    text-align: center;
+}
+.icon-contact{
+    font-size: 14px;
+    height: 25px;
+    width: 25px;
+    color: #000000;
+    
+}
+.div-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5cb5c;
+  color: #000000;
+  text-align: center;
+  padding: 20px;
+}
+
+/* styles.css (or any other name you prefer) */
+
+.btn {
+    width: 152px;
+    height: 76px;
+    position: absolute!important;
+    top: 34px!important; /* Adjusted to 0 for top */
+    left: 50px!important; /* Adjusted to 0 for left */
+    all: unset;
+    box-sizing: border-box;
+}
+
+.btn .close {
+    position: absolute;
+    width: 146px;
+    height: 52px;
+    bottom: 50px;
+    left: 3px;
+}
+
+.btn .frame {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 32px;
+    position: relative;
+    background-color: var(--pure-white);
+    border-radius: 4px;
+}
+
+.btn .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Product Sans Medium-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--primarycolor);
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+

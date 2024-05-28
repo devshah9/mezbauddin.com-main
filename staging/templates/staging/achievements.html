@@ -1,0 +1,107 @@
+{% extends 'staging/base.html' %} {% block title %} Home {% endblock %}
+<!-- loading from the static folder? -->
+{% load static %} {% load wagtailcore_tags %} {% block page-css %}
+<!-- CSS and other static file references go here -->
+<link rel="stylesheet" href="{% static 'staging/css/home.css' %}" />
+{% endblock %}
+
+<!-- adding title to base.html -->
+{% block content %}
+<div class="container flex-archi-main-container bg-effect">
+  <a href="{% url 'staging:explore' %}" class="white-btn"
+    ><i class="bi bi-plus"></i>Explore</a
+  >
+  <div class="container-fluid">
+    <div class="container clm-archi">
+      <p class="product light-blue-text mb-negative">Achievement</p>
+      <img
+        src="{% static 'staging/achievement/img/dotwhite.png' %}"
+        alt=""
+        class="dor-line"
+      />
+      <h1 class="product text-center">Certifications</h1>
+    </div>
+    <div class="container flex-archi-container">
+      <div class="row justify-center">
+        <div class="col-lg-4 col-md-6">
+          <div class="card-archi" id="card-hover">
+            <img
+              src="{% static 'staging/achievement/img/archicard1.png' %}"
+              class="img-fluid"
+            />
+            <div class="on-hover-appear">
+              <p>Microsoft Certified</p>
+              <h6>Azure Solutions Architech</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card-archi" id="hoverElement">
+            <img
+              src="{% static 'staging/achievement/img/Azure Fundamental.png' %}"
+              class="img-fluid bg-white-card"
+            />
+          </div>
+          <div class="on-hover-appear" id="hiddenElement">
+            <p>Microsoft Certified</p>
+            <h6>Azure Administrator Associate</h6>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card-archi" id="hoverElement2">
+            <img
+              src="{% static 'staging/achievement/img/Azure Admin.png' %}"
+              class="img-fluid"
+            />
+          </div>
+          <div class="on-hover-appear" id="hiddenElement2">
+            <p>Microsoft Certified</p>
+            <h6>Azure Developer Associate</h6>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-center">
+        <div class="col-lg-4 col-md-6">
+          <div class="card-archi" id="hoverElement3">
+            <img
+              src="{% static 'staging/achievement/img/Azure Developer.png' %}"
+              class="img-fluid"
+            />
+          </div>
+          <div class="on-hover-appear" id="hiddenElement3">
+            <p>Microsoft Certified</p>
+            <h6>Azure Developer Associate</h6>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card-archi" id="hoverElement4">
+            <img
+              src="{% static 'staging/achievement/img/Azure Fundamental.png' %}"
+              class="img-fluid"
+            />
+          </div>
+          <div class="on-hover-appear" id="hiddenElement4">
+            <p>Microsoft Certified</p>
+            <h6>Azure Fundamentals Developer</h6>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card-archi" id="hoverElement5">
+            <img
+              src="{% static 'staging/achievement/img/Azure Admin.png' %}"
+              class="img-fluid"
+            />
+          </div>
+          <div class="on-hover-appear" id="hiddenElement5">
+            <p>Microsoft Certified</p>
+            <h6>Azure Solutions Architech</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block page-js %}
+<script src="{% static 'staging/js/hover.js' %}"></script>
+
+{% endblock %}

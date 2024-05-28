@@ -1,0 +1,103 @@
+{% extends 'staging/base.html' %}
+
+<!-- loading from the static folder? -->
+{% load static %}
+{% load wagtailcore_tags %}
+
+<!-- adding title to base.html -->
+{% block title %}
+Menue
+{% endblock %}
+
+{% block content %}
+<!-- adding css file -->
+
+  
+    <div class="menu">
+      <div class="div">
+        <a href="{% url 'staging:about_page' %}">
+          <div class="about">
+            <div class="group">
+              <div class="text-wrapper">About</div>
+              <div class="text-wrapper-2">Know me more</div>
+              <div class="rectangle"></div>
+            </div>
+          </div>
+        </a>
+        <a href="{% url 'staging:contact_page' %}">
+          <div class="contact">
+            <div class="group-2">
+              <div class="text-wrapper">Contact</div>
+              <div class="text-wrapper-3">Get in touch</div>
+              <div class="rectangle-2"></div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="{% url 'staging:services_page' %}">
+          <div class="services">
+            <div class="group-3">
+              <div class="text-wrapper">Services</div>
+              <div class="text-wrapper-4">Service i provide</div>
+              <div class="rectangle-3"></div>
+            </div>
+          </div>
+        </a>
+        
+        <div class="overlap">
+          <a href="{% url 'staging:blog_page' %}">
+            <div class="blog">
+              <div class="group-4">
+                <div class="text-wrapper-5">Blog</div>
+                <div class="text-wrapper-6">What’s New</div>
+                <div class="rectangle-4"></div>
+              </div>
+            </div>
+          </a>
+          
+          <a href="{% url 'staging:home' %}">
+            <div class="home">
+              <div class="overlap-group"><div class="text-wrapper-7">Home</div></div>
+            </div>
+          </a>
+          
+          <a href="{% url 'staging:home' %}">
+          <button class="btn">
+            <div class="overlap-2">
+              <div class="overlap-group-wrapper">
+                <div class="overlap-group-2">
+                  <div class="rectangle-5"></div>
+                  <div class="rectangle-6"></div>
+                  <div class="rectangle-7"></div>
+                </div>
+              </div>
+              <div class="close">
+                <div class="frame"><div class="text-wrapper-8">- Close</div></div>
+              </div>
+            </div>
+          </button>
+        </a>
+        </div>
+        
+        <a href="{% url 'staging:achievements_page' %}">
+            <div class="portfolio">
+              <div class="achievement">
+                <div class="text-wrapper">Achievement</div>
+                <div class="text-wrapper-9">My Latest Work</div>
+                <div class="rectangle-8"></div>
+              </div>
+          </div>
+        </a>
+          
+        
+        <div class="book-an-appointment">
+          <div class="group-5">
+            <div class="text-wrapper">Book a Meeting</div>
+            <div class="text-wrapper-10">To get to know</div>
+            <div class="rectangle-9"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

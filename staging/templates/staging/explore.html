@@ -1,0 +1,68 @@
+{% extends 'staging/base.html' %} {% block title %} Explore {% endblock %}
+<!-- loading from the static folder? -->
+{% load static %} {% load wagtailcore_tags %} {% block page-css %}
+<!-- CSS and other static file references go here -->
+<link rel="stylesheet" href="{% static 'staging/css/home.css' %}" />
+{% endblock %}
+
+<!-- adding title to base.html -->
+{% block content %}
+<section class="fullwidth-menuclose" id="fullscreen-container">
+	<a href="{% url 'staging:home' %}" class="close-btn "><i class="bi bi-plus"></i>Close</a>
+	<div class="container-fluid bigdisplay">
+	<div class="row">
+		<div class="col-sm-6  container-mix">
+			<div class="row">
+				<div class="col-lg-12   about-container">
+					<a href="{% url 'staging:about_page' %}">
+						<h1 class="index-text">About</h1>
+						<p class="product-font text-white">Know me more</p>
+						<hr class="line-white">
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<div class="row services-container">
+						<a href="{% url 'staging:services_page' %}">
+							<h1 class="index-text text-center">Services</h1>
+							<p class="product-font text-ligh-white  text-center">Service i provide</p>
+							<hr class="line-dark">
+						</a>
+					</div>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-6 col-sm-6  home-container">
+								<a href="{% url 'staging:home' %}">
+									<h5 class="index-text">Home</h5>
+								</a>
+							</div>
+							<div class="col-sm-6 blog-container">
+								<a href="{% url 'staging:blog_page' %}">
+									<h3 class="index-text text-green">Blog</h3>
+									<p class="product-font text-product-index-p text-dark">What’s New</p>
+									<hr class="line-dark">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-12  contact-container">
+					<a href="{% url 'staging:contact_page' %}">
+						<h1 class="index-text text-center">Contact</h1>
+						<p class="product-font text-product-index-p   text-center">Get in touch</p>
+						<hr class="line-dark">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6   archi-container">
+			<a href="{% url 'staging:achievements_page' %}">
+				<h1 class="index-text text-center">Achievement</h1>
+				<p class="product-font text-product-index-p text-center">My Latest Work</p>
+				<hr class="line-dark">
+			</a>
+		</div>
+	</div>
+</section>
+{% endblock %}

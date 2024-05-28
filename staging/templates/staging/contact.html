@@ -1,0 +1,101 @@
+{% extends 'staging/base.html' %} {% block title %} Home {% endblock %}
+<!-- loading from the static folder? -->
+{% load static %} {% load wagtailcore_tags %} {% block page-css %}
+<!-- CSS and other static file references go here -->
+<link rel="stylesheet" href="{% static 'staging/css/home.css' %}" />
+{% endblock %}
+
+<!-- adding title to base.html -->
+{% block content %}
+<div class="container-fluid flex-contact-main-container">
+  <a href="{% url 'staging:explore' %}" class="white-btn"
+    ><i class="bi bi-plus"></i>Close</a
+  >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 contact-clm">
+        <h1>Let’s collaborate</h1>
+        <img
+          src="{% static 'staging/contact/img/dotwhite.png' %}"
+          alt=""
+          class="dot-contact"
+        />
+        <p class="text-white">hello@domain.com</p>
+        <div class="flex-contact">
+          <div class="container-clm-contact">
+            <p>Find us</p>
+            <div class="flex-find-us">
+              <a href="">FB</a>
+              <a href="">IG</a>
+              <a href="">BE</a>
+              <a href="">IN</a>
+            </div>
+          </div>
+          <div class="container-clm-contact">
+            <p>London, UK</p>
+            <div class="flex-find-us">
+              <a href="">+88474</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 contact-clm">
+        <h1>Say hello</h1>
+        <div class="row">
+          <div class="col-lg-6 input-col">
+            <label for="Name" class="form-label">Name </label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your name"
+              aria-label="First name"
+            />
+          </div>
+          <div class="col-lg-6 input-col">
+            <label for="Subject" class="form-label">Subject</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Choose Topic"
+              aria-label="Last name"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-12 input-col">
+            <label for="company" class="form-label">Company</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Company"
+              aria-label="First name"
+            />
+          </div>
+          <div class="col-lg-6 col-md-12 input-col">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input
+              type="Email"
+              class="form-control"
+              placeholder="Email Address"
+              aria-label="Last name"
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="Message" class="form-label">Message</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Start typing here"
+          />
+        </div>
+        <button class="transparen-btn-green">
+          Submit <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

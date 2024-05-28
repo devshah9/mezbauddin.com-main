@@ -1,0 +1,32 @@
+{% extends 'staging/base.html' %} {% block title %} Home {% endblock %}
+<!-- loading from the static folder? -->
+{% load static %} {% load wagtailcore_tags %} {% block page-css %}
+<!-- CSS and other static file references go here -->
+<link rel="stylesheet" href="{% static 'staging/css/home.css' %}" />
+{% endblock %}
+
+<!-- adding title to base.html -->
+{% block content %}
+<div class="container-fluid background-green">
+  <div class="container-fluid herobg">
+    <a href="{% url 'staging:explore' %}" class="white-btn"
+      ><i class="bi bi-plus"></i>Explore</a
+    >
+    <img
+      src="{% static 'staging/home/img/Logo.svg' %}"
+      class="img-fluid logo"
+    />
+    <div class="container home-logo-flex">
+      <img src="{% static 'staging/home/img/whatsapp.svg' %}" alt="" />
+      <img src="{% static 'staging/home/img/@.svg' %}" alt="" />
+      <img src="{% static 'staging/home/img/github.svg' %}" alt="" />
+      <img src="{% static 'staging/home/img/linkid.svg' %}" alt="" />
+      <img src="{% static 'staging/home/img/twiiter.svg' %}" alt="" />
+      <img src="{% static 'staging/home/img/slack.svg' %}" alt="" />
+      <img src="{% static 'staging/home/img/Layer_2.svg' %}" alt="" />
+      <img src="{% static 'staging/home/img/Vector.svg' %}" alt="" />
+    </div>
+  </div>
+</div>
+
+{% endblock %}

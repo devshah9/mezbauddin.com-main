@@ -1,0 +1,207 @@
+{% extends 'staging/base.html' %} {% block title %} Home {% endblock %}
+<!-- loading from the static folder? -->
+{% load static %} {% load wagtailcore_tags %} {% block page-css %}
+<!-- CSS and other static file references go here -->
+<link rel="stylesheet" href="{% static 'staging/css/home.css' %}" />
+{% endblock %}
+
+<!-- adding title to base.html -->
+{% block content %}
+<section>
+  <div class="container-fluid flex-blog-main-container">
+    <a href="{% url 'staging:explore' %}" class="white-btn"
+      ><i class="bi bi-plus"></i>Close</a
+    >
+    <div class="container">
+      <div class="container flex-blog">
+        <img
+          src="{% static 'staging/blog/img/Latest News.png' %}"
+          alt=""
+          class="archititleimg img-fluid"
+        />
+      </div>
+      <div class="container clm-blog">
+        <h6 class="text-white">Product</h6>
+        <h1 class="text-white my-2">
+          Product Management 101: Navigating the Path to Success
+        </h1>
+        <p class="text-white mt-3">
+          In the fast-paced world of technology and business, effective product
+          management is the linchpin that holds a company's vision, strategy,
+          and execution together. Product managers play a crucial role in
+          bringing innovative ideas to life and ensuring that they resonate with
+          ...
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+      <div class="col">
+        <div class="card-blog">
+          <img
+            src="{% static 'staging/blog/img/blog-card.png' %}"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <a href="#" class="card-link"
+              ><i class="bi bi-cpu"></i>business, economy, design</a
+            >
+            <h4 class="card-title">
+              How to Own Your Audience by Creating an Email List
+            </h4>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore...
+            </p>
+            <a href="#" class="card-link"
+              ><i class="bi bi-person"></i>Mezba Uddin</a
+            >
+            <a href="#" class="card-link"
+              ><i class="bi bi-calendar"></i>9 October, 2023</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card-blog">
+          <img
+            src="{% static 'staging/blog/img/blog-card.png' %}"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <a href="#" class="card-link"
+              ><i class="bi bi-cpu"></i>business, economy, design</a
+            >
+            <h4 class="card-title">
+              How to Own Your Audience by Creating an Email List
+            </h4>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore...
+            </p>
+            <a href="#" class="card-link"
+              ><i class="bi bi-person"></i>Mezba Uddin</a
+            >
+            <a href="#" class="card-link"
+              ><i class="bi bi-calendar"></i>9 October, 2023</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card-blog">
+          <img
+            src="{% static 'staging/blog/img/blog-card.png' %}"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <a href="#" class="card-link"
+              ><i class="bi bi-cpu"></i>business, economy, design</a
+            >
+            <h4 class="card-title">
+              How to Own Your Audience by Creating an Email List
+            </h4>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore...
+            </p>
+            <a href="#" class="card-link"
+              ><i class="bi bi-person"></i>Mezba Uddin</a
+            >
+            <a href="#" class="card-link"
+              ><i class="bi bi-calendar"></i>9 October, 2023</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+      <div class="col">
+        <div class="card-blog">
+          <img
+            src="{% static 'staging/blog/img/blog-card.png' %}"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <a href="#" class="card-link"
+              ><i class="bi bi-cpu"></i>business, economy, design</a
+            >
+            <h6 class="card-title">
+              How to Own Your Audience by Creating an Email List
+            </h6>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore...
+            </p>
+            <a href="#" class="card-link"
+              ><i class="bi bi-person"></i>Mezba Uddin</a
+            >
+            <a href="#" class="card-link"
+              ><i class="bi bi-calendar"></i>9 October, 2023</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card-blog">
+          <img
+            src="{% static 'staging/blog/img/blog-card.png' %}"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <a href="#" class="card-link"
+              ><i class="bi bi-cpu"></i>business, economy, design</a
+            >
+            <h6 class="card-title">
+              How to Own Your Audience by Creating an Email List
+            </h6>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore...
+            </p>
+            <a href="#" class="card-link"
+              ><i class="bi bi-person"></i>Mezba Uddin</a
+            >
+            <a href="#" class="card-link"
+              ><i class="bi bi-calendar"></i>9 October, 2023</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card-blog">
+          <img
+            src="{% static 'staging/blog/img/blog-card.png' %}"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <a href="#" class="card-link"
+              ><i class="bi bi-cpu"></i>business, economy, design</a
+            >
+            <h6 class="card-title">
+              How to Own Your Audience by Creating an Email List
+            </h6>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore...
+            </p>
+            <a href="#" class="card-link"
+              ><i class="bi bi-person"></i>Mezba Uddin</a
+            >
+            <a href="#" class="card-link"
+              ><i class="bi bi-calendar"></i>9 October, 2023</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
