@@ -7,10 +7,15 @@
 
 <!-- adding title to base.html -->
 {% block content %}
+{% load wagtailadmin_tags  wagtailcore_tags %}
 <div class="container-fluid bg-darkgreen">
+  
   <a href="{% url 'staging:explore' %}" class="white-btn"
-    ><i class="bi bi-plus"></i>Close</a
+    ><i class="bi bi-plus"></i>Close {{ page.first_part }}</a
   >
+  {% if page.first_part %}
+  {{ page.first_part }}
+  {% else %}
   <div class="container flex-servies">
     <div class="row">
       <div class="clmtextflex">
@@ -48,10 +53,33 @@
     </div>
     <div class="flex-services-main">
       <p class="text-success px-4 flex-services-pra">
-        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-        sint. Velit officia consequat duis enim velit mollit. Exercitation.
+        {% for title in page.titles %}
+        {{ title.value.title }}
+      {% endfor %}
       </p>
       <div class="container d-flex">
+        
+        {% for application in page.applications %}
+        <div class="clm-icon">
+          <img
+            src="{% static 'staging/services/img/atom.png' %}"
+            alt=""
+            class="grenhide"
+          />
+          <img
+            src="{% static 'staging/services/img/whiteatom.png' %}"
+            alt=""
+            class="hide"
+          />
+          <h5 class="atomtext">{{ application.value.title }}</h5>
+          <div class="flexclmactive">
+            <div class="pratext">
+              {{application.value.description|richtext  }}
+            </div>
+            <i class="bi bi-arrow-right text-right"></i>
+          </div>
+        </div>
+      {% endfor %}
         <div class="clm-icon">
           <img
             src="{% static 'staging/services/img/atom.png' %}"
@@ -134,7 +162,12 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
+  {% endif %}
+  {% if page.second_part %}
+  {{ page.second_part }}
+  
+  {% else %}
   <div class="container container-logo-about">
     <div class="row">
       <div class="col-lg-6 service-container-images">
@@ -212,6 +245,12 @@
       </div>
     </div>
   </div>
+  {% endif %}
+
+  {% if page.third_part %}
+  {{ page.third_part }}
+
+  {% else %}
   <div class="container background-color-white">
     <div class="row flex-card-craetive">
       <div class="clm-card-services">
@@ -284,10 +323,27 @@
       </div>
     </div>
   </div>
+  {% endif %}
 </div>
 
 {% endblock %} {% block page-js %}
 <script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const clmIcons = document.querySelectorAll('.clm-icon');
+
+    clmIcons.forEach(clmIcon => {
+        clmIcon.addEventListener('click', () => {
+            // Remove 'clm-iconactive' class from all divs
+            clmIcons.forEach(icon => {
+                icon.classList.remove('clm-iconactive');
+            });
+
+            // Add 'clm-iconactive' class to the clicked div
+            clmIcon.classList.add('clm-iconactive');
+        });
+    });
+});
+
   var slideIndex = 1;
 
   function showSlides2(n) {

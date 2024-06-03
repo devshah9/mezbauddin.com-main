@@ -1,18 +1,17 @@
 from django.db import models
 from django import forms
-
 from wagtail.snippets.models import register_snippet
-
-# New imports added for ParentalKey, Orderable, InlinePanel, ClusterTaggableManager, TaggedItemBase, MultiFieldPanel
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
-
 from wagtail.models import Page, Orderable
-from wagtail.fields import RichTextField
+from wagtail.fields import RichTextField, StreamField
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.blocks import RichTextBlock, TextBlock, StructBlock
 from wagtail.search import index
-
+from wagtail.images.models import Image
+from wagtail.images.widgets import AdminImageChooser
 
 class BlogPageTag(TaggedItemBase):
     content_object = ParentalKey(
@@ -25,11 +24,9 @@ class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
 
     def get_context(self, request):
-        # Update context to include only published posts, ordered by reverse-chron
         context = super().get_context(request)
         tag = request.GET.get('tag')
         blogpages = BlogPage.objects.filter(tags__name=tag) if tag else BlogPage.objects.all()
-        context = super().get_context(request)
         context['blogpages'] = blogpages
         return context
 
@@ -56,6 +53,26 @@ class BlogPage(Page):
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
+    header_image = models.ForeignKey(
+        Image,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    blog_title = models.CharField(max_length=255, default="title")
+    blog_meta = models.CharField(max_length=255, default="blog_meta")
+    blog_content = StreamField([
+        ('paragraph', RichTextBlock()),
+        ('code', TextBlock()),
+    ], use_json_field=True, default="")
+    comments = StreamField([
+        ('comment', StructBlock([
+            ('name', TextBlock()),
+            ('date', TextBlock()),
+            ('comment', TextBlock()),
+        ])),
+    ], use_json_field=True, blank=True)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
     categories = ParentalManyToManyField('blog.BlogCategory', blank=True)
 
@@ -65,6 +82,10 @@ class BlogPage(Page):
             return gallery_item.image
         else:
             return None
+
+    @staticmethod
+    def get_recent_posts():
+        return BlogPage.objects.live().order_by('-first_published_at')[:5]
 
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
@@ -79,8 +100,15 @@ class BlogPage(Page):
         ], heading="Blog information"),
         FieldPanel('intro'),
         FieldPanel('body'),
+        FieldPanel('header_image', widget=AdminImageChooser),
+        FieldPanel('blog_title'),
+        FieldPanel('blog_meta'),
+        FieldPanel('blog_content'),  # Use FieldPanel for StreamField
+        FieldPanel('comments'),  # Use FieldPanel for StreamField
         InlinePanel('gallery_images', label="Gallery images")
     ]
+
+    template = "staging/blog-content.html"
 
 class BlogPageGalleryImage(Orderable):
     page = ParentalKey(BlogPage, on_delete=models.CASCADE, related_name='gallery_images')
@@ -94,3 +122,38 @@ class BlogPageGalleryImage(Orderable):
         FieldPanel('caption'),
     ]
 
+@register_snippet
+class RelatedPost(models.Model):
+    title = models.CharField(max_length=255)
+    url = models.URLField()
+
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('url'),
+    ]
+
+    def __str__(self):
+        return self.title
+
+class BlogPageRelatedPosts(models.Model):
+    page = ParentalKey(BlogPage, on_delete=models.CASCADE, related_name='related_posts')
+    related_post = models.ForeignKey(RelatedPost, on_delete=models.CASCADE)
+
+    panels = [
+        FieldPanel('related_post'),
+    ]
+
+@register_snippet
+class Tag(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+# class BlogPageTag(models.Model):
+#     page = ParentalKey(BlogPage, on_delete=models.CASCADE, related_name='blog_page_tags', null=True)
+#     tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
+
+#     panels = [
+#         FieldPanel('tag'),
+#     ]

@@ -29,6 +29,9 @@ INSTALLED_APPS = [
     "blog",
     "staging",
     "search",
+    "aboutme",
+    "service",
+    "achievements",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -92,22 +95,22 @@ WSGI_APPLICATION = "MezProject.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-#     }
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mezproject_db',
-        'USER': 'root',
-        'PASSWORD': 'R1ng0B1ng0!',
-        'HOST': 'db',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mezproject_db',
+#         'USER': 'root',
+#         'PASSWORD': 'R1ng0B1ng0!',
+#         'HOST': 'db',
+#     }
+# }
 
 
 
@@ -152,10 +155,12 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "static"),
-    os.path.join(PROJECT_DIR, 'staging/static'), # Add your second static directory
-]
+# STATICFILES_DIRS = [
+#     os.path.join(PROJECT_DIR, "static"),
+#     os.path.join(r"C:/Users/DELL/Downloads/mezbauddin.com-main1/mezbauddin.com-main/staging/static"),
+
+#     os.path.join(PROJECT_DIR, 'staging/static'), # Add your second static directory
+# ]
 
 # ManifestStaticFilesStorage is recommended in production, to prevent outdated
 # JavaScript / CSS assets being served from cache (e.g. after a Wagtail upgrade).

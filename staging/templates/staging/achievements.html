@@ -1,6 +1,10 @@
-{% extends 'staging/base.html' %} {% block title %} Home {% endblock %}
+{% extends 'staging/base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %} Home {% endblock %}
 <!-- loading from the static folder? -->
-{% load static %} {% load wagtailcore_tags %} {% block page-css %}
+ {% load wagtailcore_tags %} {% block page-css %}
 <!-- CSS and other static file references go here -->
 <link rel="stylesheet" href="{% static 'staging/css/home.css' %}" />
 {% endblock %}
@@ -11,6 +15,9 @@
   <a href="{% url 'staging:explore' %}" class="white-btn"
     ><i class="bi bi-plus"></i>Explore</a
   >
+  {% if page.achivement %}
+  {{ page.achivement|safe }}
+  {% else %}
   <div class="container-fluid">
     <div class="container clm-archi">
       <p class="product light-blue-text mb-negative">Achievement</p>
@@ -100,6 +107,8 @@
       </div>
     </div>
   </div>
+  {% endif %}
+
 </div>
 {% endblock %} {% block page-js %}
 <script src="{% static 'staging/js/hover.js' %}"></script>

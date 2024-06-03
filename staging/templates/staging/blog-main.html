@@ -1,0 +1,65 @@
+{% extends 'staging/base.html' %}
+{% block title %} Blog {% endblock %}
+
+{% load static %} {% load wagtailcore_tags %}
+
+{% block page-css %}
+<link rel="stylesheet" href="{% static 'staging/css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container-fluid flex-blog-main-container">
+        <a href="{% url 'staging:explore' %}" class="white-btn">
+            <i class="bi bi-plus"></i>Close
+        </a>
+        <div class="container">
+            <div class="container flex-blog">
+                <img src="{% static 'staging/blog/img/Latest News.png' %}" alt="" class="archititleimg img-fluid" />
+            </div>
+            <div class="container clm-blog">
+                <h6 class="text-white">Product</h6>
+                <h1 class="text-white my-2">
+                    Product Management 101: Navigating the Path to Success
+                </h1>
+                <p class="text-white mt-3">
+                    In the fast-paced world of technology and business, effective product
+                    management is the linchpin that holds a company's vision, strategy,
+                    and execution together. Product managers play a crucial role in
+                    bringing innovative ideas to life and ensuring that they resonate with
+                    ...
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+            {% for blog_page in blogpages %}
+            <div class="col">
+                <div class="card-blog">
+                    <img src="{% static 'staging/blog/img/blog-card.png' %}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        {% for tag in blog_page.tags.all %}
+                            <a href="{{ blog_page.get_absolute_url }}" class="card-link">
+                                <i class="bi bi-cpu"></i>{{ tag.name }}
+                            </a>
+                        {% endfor %}
+                        <h4 class="card-title">{{ blog_page.blog_title }}</h4>
+                        <p class="card-text">
+                            {{ blog_page.intro|truncatewords:30 }}
+                        </p>
+                        <a href="#" class="card-link">
+                            <i class="bi bi-person"></i>Mezba Uddin
+                        </a>
+                        <a href="#" class="card-link">
+                            <i class="bi bi-calendar"></i>
+                            {{ blog_page.date|date:"F j, Y" }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
