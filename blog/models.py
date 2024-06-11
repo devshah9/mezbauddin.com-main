@@ -105,7 +105,8 @@ class BlogPage(Page):
         FieldPanel('blog_meta'),
         FieldPanel('blog_content'),  # Use FieldPanel for StreamField
         FieldPanel('comments'),  # Use FieldPanel for StreamField
-        InlinePanel('gallery_images', label="Gallery images")
+        InlinePanel('gallery_images', label="Gallery images"),
+        InlinePanel('related_posts', label="Related posts"),
     ]
 
     template = "staging/blog-content.html"
